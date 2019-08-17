@@ -1,0 +1,21 @@
+{
+  "name": "gatsby-source-dynamodb",
+  "version": "0.0.2",
+  "description": "Source info from DynamoDB ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gatsby",
+    "source",
+    "aws",
+    "dynamodb",
+    "gatsby-plugin"
+  ],
+  "author": "W Lutz",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.479.0"
+  }
+}
