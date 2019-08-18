@@ -5,18 +5,18 @@
 </p>
 
 <h1 align="center">
-  gatsby-source-dynamodb
+  gatsby-source-eventzilla
 </h1>
 
-This module helps you pull your AWS dynamodb account using IAM credentials. The inspiration was designed to assist connecting private tables from AWS Amplify for public-facing sites.
+This module helps you pull data from your Eventzilla account. I had a couple issues using one of the competitors (for which there are many source plugins) and moved to Eventzilla. This plugin makes all of your events available in graphql. This _only_ works for events, none of the other api endpoints.
 
 To install:
 
 ```
-yarn add gatsby-source-dynamodb
+yarn add gatsby-source-eventzilla
 ```
 
-(or `npm install --save gatsby-source-dynamodb`)
+(or `npm install --save gatsby-source-eventzilla`)
 
 Then add the config to your `gatsby-config.js`:
 
@@ -24,31 +24,23 @@ Then add the config to your `gatsby-config.js`:
 module.exports = {
   plugins: [
     {
-      resolve: 'gatsby-source-dynamodb',
+      resolve: 'gatsby-source-eventzilla',
       options: {
         typeName: '<INPUT_GRAPHQL_TYPE_NAME_HERE>',
-        accessKeyId: '<AWS_ACCESS_KEY_ID>', 
-        secretAccessKey: '<AWS_SECRET_ACCESS_KEY>',
-        region: '<AWS_REGION>',
-        params: {
-          TableName : "<TABLE_NAME>",
-          // OTHER PARAMS HERE
-        }
+        apiKey: '<PUT_EVENTZILLA_API_KEY_HERE>', 
       }
     },
   ],
 };
 ```
 
-## AWS CREDENTIALS
+## EVENTZILLA CREDENTIALS
 
-- Get your AWS Credentials for IAM user: https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/getting-your-credentials.html
+- Log into your Eventzilla account and navigate to API Access [https://www.eventzilla.net/admin/ManageSettings?mode=appmanagement](https://www.eventzilla.net/admin/ManageSettings?mode=appmanagement)
 
-- Set up permissions for your IAM user, you only need scan: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/using-identity-based-policies.html
+- Choose the "Create a New App" button and enter the appropriate details.
 
-- Use params from AWS DynamoDB Query Scan: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GettingStarted.Js.04.html#GettingStarted.Js.04.Scan
-
-_It is strongly recommended that credentials are stored in environment variables._
+- Click "show" to see your token and copy it to the apiKey in your gatsby-config file.
 
 ## Helpful links
 

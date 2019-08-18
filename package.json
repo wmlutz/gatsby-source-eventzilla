@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-source-dynamodb",
-  "version": "0.0.2",
-  "description": "Source info from DynamoDB ",
+  "name": "gatsby-source-eventzilla",
+  "version": "0.0.1",
+  "description": "Source info from Eventzilla ",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,13 +9,12 @@
   "keywords": [
     "gatsby",
     "source",
-    "aws",
-    "dynamodb",
+    "eventzilla",
     "gatsby-plugin"
   ],
   "author": "W Lutz",
   "license": "MIT",
   "dependencies": {
-    "aws-sdk": "^2.479.0"
+    "axios": "^0.19.0"
   }
 }
